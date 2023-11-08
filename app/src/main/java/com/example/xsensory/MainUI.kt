@@ -32,13 +32,14 @@ import com.example.xsensory.ui.theme.XSensory_CanaryTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MessageCard() {
+fun MessageCard(onMessageChange: (String) -> Unit) {
     var text by remember { mutableStateOf("") }
 
     TextField(
         value = text,
         onValueChange = {
             text = it
+            onMessageChange(it)
         },
         modifier = Modifier
             .clip(shape = RoundedCornerShape(24.dp))
@@ -99,7 +100,7 @@ fun ChatPreview() {
             verticalArrangement = Arrangement.spacedBy(24.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-            MessageCard()
+            MessageCard{}
             SendButton {}
             FilesButton{}
             LoggerCard()
