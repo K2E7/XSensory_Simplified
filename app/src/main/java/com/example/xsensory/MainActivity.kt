@@ -1,5 +1,5 @@
 // MainActivity.kt
-
+// UI is in MainUI.kt
 package com.example.xsensory
 
 import android.os.Bundle
