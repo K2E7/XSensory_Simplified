@@ -34,7 +34,7 @@ import java.io.IOException
 
 class MainActivity : ComponentActivity() {
 
-    private val SERVICE_ID = "XSensory-TestRelease"
+    private val serviceId = "XSensory-TestRelease"
     private lateinit var connectionsClient : ConnectionsClient
     private var messageText: String = ""
 
@@ -133,7 +133,7 @@ class MainActivity : ComponentActivity() {
 
         connectionsClient.startAdvertising(
             /* p0 = */ "MyDevice", // Set a name for your device
-            /* p1 = */ SERVICE_ID,
+            /* p1 = */ serviceId,
             /* p2 = */ connectionLifecycleCallback,
             /* p3 = */ advertisingOptions
         )
@@ -153,7 +153,7 @@ class MainActivity : ComponentActivity() {
 
         // Start discovery
         connectionsClient.startDiscovery(
-            /* p0 = */ SERVICE_ID,
+            /* p0 = */ serviceId,
             /* p1 = */ endpointDiscoveryCallback,
             /* p2 = */ discoveryOptions
         )
